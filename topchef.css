@@ -12,7 +12,84 @@ html {
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+            text-align: center;
+            padding: 20px;
     font-size: 1rem;
     font-family: "Tajawal", sans-serif;
     overflow-x: hidden;
+    background-image: url("wood-1759566.jpg");
+}
+.container {
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #ffffff; 
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #ffcf00;
+    position: relative;
+    text-align: center;
+}
+h2::before{
+    content: "...قريبا";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    color: #ffcf00;
+    border-right: 8px solid #ffcf00;
+    border-radius: 50PX;
+    animation: slideInOut 2s ease-in-out infinite;
+}
+@keyframes slideInOut {
+    0%, 100% {
+        width: 0%;
+        padding-right: 0;
+        filter: none;
+    }
+    50% {
+        width: 10%;
+        padding-right: 50px;
+        filter: drop-shadow(0 0 25px #ffcf00);
+    }
+}
+
+svg, .ramadan-text {
+    display: none;
+}
+
+.ramadan-image {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 2rem; -webkit-text-stroke: 0.8px #ffcf00; }
+    .ramadan-text { font-size: 1rem; }
+    .ramadan-image {
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.2rem; }
+    h2 { font-size: 1.5rem; -webkit-text-stroke: 0.6px #ffcf00; }
+    .ramadan-text { font-size: 0.8rem; }
+    .ramadan-image {
+        max-width: 50%;
+    }
 }
