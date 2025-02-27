@@ -65,6 +65,26 @@ h2::before{
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
 svg, .ramadan-text {
     display: none;
 }
@@ -74,6 +94,7 @@ svg, .ramadan-text {
     height: auto;
     display: block;
     margin: 0 auto 20px;
+    animation: fadeIn 2s ease-in-out, pulse 3s infinite;
 }
 
 @media (max-width: 768px) {
@@ -82,6 +103,7 @@ svg, .ramadan-text {
     .ramadan-text { font-size: 1rem; }
     .ramadan-image {
         max-width: 40%;
+        animation: fadeIn 2s ease-in-out, pulse 3s infinite;
     }
 }
 
@@ -91,5 +113,6 @@ svg, .ramadan-text {
     .ramadan-text { font-size: 0.8rem; }
     .ramadan-image {
         max-width: 50%;
+        animation: fadeIn 2s ease-in-out, pulse 3s infinite;
     }
 }
