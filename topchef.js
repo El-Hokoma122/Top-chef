@@ -32,7 +32,7 @@ async function main() {
             div.innerHTML = `
                 <img src="${productImage}" alt="${productName}" />
                 <h4 class="product-title">${productName}</h4>
-                <p>${productDescription}</p>
+                <p dir="rtl">${productDescription}</p>
                 <div class="special__ratings">
                     <span><i class="ri-star-fill"></i></span>
                     <span><i class="ri-star-fill"></i></span>
