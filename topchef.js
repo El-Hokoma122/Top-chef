@@ -41,8 +41,8 @@ async function main() {
                     <span><i class="ri-star-fill"></i></span>
                 </div>
                 <div class="special__footer">
-                    <p class="price">${productPrice}</p>
-                    <button class="btn">أطلب أوردرك</button>
+                    <p class="price" dir="rtl">${productPrice}</p>
+                    <a href="tel:+201212758001" class="btn">أطلب أوردرك</a>
                 </div>
             `;
             return { element: div, category: productCategory };
