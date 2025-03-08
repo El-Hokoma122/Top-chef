@@ -94,7 +94,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--primary-color);
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
+    border-bottom-right-radius:10px ;
+    border-bottom-left-radius:10px ;
     
   }
   .nav__logo a {
@@ -121,6 +123,7 @@
     transition: 0.5s;
     z-index: -1;
     transform: translateY(-100%);
+    border-radius: 10px;
   }
   .nav__links.open {
     transform: translateY(0);
