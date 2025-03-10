@@ -30,7 +30,7 @@ async function main() {
             div.id = productId; 
 
             div.innerHTML = `
-                <img src="${productImage}" alt="${productName}" />
+                <img src="${productImage}" alt="${productName}" loading="lazy"/>
                 <h4 class="product-title">${productName}</h4>
                 <p dir="rtl">${productDescription}</p>
                 <div class="special__ratings">
