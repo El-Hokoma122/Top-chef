@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المنيو - توب شيف</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav_logo">
+      <img src="assets/توب شيف 1.svg" alt="Logo" class="logo_img" />
+      <span>توب شيف</span>
+    </a>
+    <div class="nav_links" id="nav_links">
+      <a href="#" class="nav_link active">الرئيسية</a>
+      <a href="#menu_section" class="nav_link">المنيو</a>
+      <a href="#reviews_section" class="nav_link">اراء العملاء</a>
+      <a href="#" class="nav_link">تواصل معنا</a>
+    </div>
+    <div class="menu_toggle" id="mobile_menu_btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero_content">
+      <h1>استمتع بألذ طعم <br> مع <span>توب شيف</span></h1>
+      <p>الأكل هنا مش مجرد وجبة، ده رحلة من المتعة بنجمع بين الابتكار والأصالة عشان نبهج حواسك من أول لقمة، عندنا أطيب المشويات والمقليات اللي هتخليك تعيش لحظات مش هتنساها.</p>
+    </div>
+    <!-- Placeholder for Chef character if available, else an empty div keeping layout -->
+    <div class="hero_image">
+      <img src="assets/6a6dc59c-63fe-4c98-9a1e-52b35414e218 1.svg" alt="Chef" onerror="this.style.display='none'" />
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu_section" id="menu_section">
+    <!-- Category Tabs -->
+    <div class="category_tabs" id="category_tabs">
+      <!-- Tabs will be rendered here by JS -->
+      <button class="tab_btn">جاري التحميل...</button>
+    </div>
+
+    <!-- Items Grid -->
+    <div class="items_grid" id="items_grid">
+      <!-- Items will be rendered here by JS -->
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews_section" id="reviews_section">
+    <div class="reviews_header">
+      <div class="reviews_title">
+        <h2>آراء العملاء</h2>
+        <div class="stars_summary">
+          <span class="rating_avg" id="avg_rating_value">4.9</span>
+          <div class="stars_row" id="avg_stars"></div>
+          <span class="rating_total" id="total_reviews_count">(120+ تقييم)</span>
+        </div>
+      </div>
+      <button class="add_review_btn" onclick="openAddReviewModal()">أضف تقييمك</button>
+    </div>
+
+    <div class="reviews_container" id="reviews_container">
+      <!-- Reviews will be rendered here -->
+    </div>
+    <div class="reviews_footer" id="reviews_pagination" style="display:none; text-align:center; margin-top:20px;">
+      <button class="load_more_btn" onclick="loadMoreReviews()">عرض المزيد من الآراء</button>
+    </div>
+  </section>
+
+  <!-- Location & Social Section -->
+  <section class="location_section" id="contact_section">
+    <div class="section_container">
+      <div class="location_header">
+        <h2>موقعنا</h2>
+        <p>تشرفنا بزيارتك في فرعنا بأي وقت</p>
+      </div>
+      
+      <div class="map_container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25828.087714354046!2d31.54237799542361!3d30.5999644475796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7f19b29438cdf%3A0x5a325dcaa8545c86!2z2YXYt9i52YUg2YXYtNmI2YrYp9iqINiq2YjYqCDYtNmK2YE!5e1!3m2!1sar!2seg!4v1741259381215!5m2!1sar!2seg" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="social_container">
+        <h3>تابعونا على</h3>
+        <div class="social_links">
+          <a href="https://www.facebook.com/profile.php?id=100064184138764" target="_blank" class="social_link facebook" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <!-- <a href="https://instagram.com" target="_blank" class="social_link instagram" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a> -->
+          <a href="https://tiktok.com" target="_blank" class="social_link tiktok" title="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+          </a>
+          <a href="Https://wa.me/+201276941740" target="_blank" class="social_link whatsapp" title="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-4.821 4.754a8.132 8.132 0 0 1-4.141-1.127l-.297-.177-3.078.81.824-2.998-.195-.311a8.115 8.115 0 0 1-1.242-4.293c0-4.502 3.664-8.127 8.129-8.127 2.193 0 4.255.859 5.805 2.41 1.55 1.55 2.409 3.611 2.409 5.8 0 4.503-3.642 8.127-8.113 8.127zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.174L2 22l4.957-1.3c1.465.793 3.132 1.24 4.903 1.24a9.98 9.98 0 0 0 10-10C21.86 6.486 17.514 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer_grid">
+      <div class="footer_col">
+        <h4 style="font-size:24px;">توب شيف</h4>
+        <p>الطبخ في رحلة طعم فريدة مع توب شيف، كل أكلة محضرة بإتقان. وكل لقمة بتحكي حكاية من اللذة والجودة. استعد لتجربة طعام ولا أروع.</p>
+        
+      </div>
+      <div class="footer_col">
+        <h4>المنيو</h4>
+        <ul>
+          <li><a href="#menu_section">السندوتشات</a></li>
+          <li><a href="#menu_section">الوجبات</a></li>
+          <li><a href="#menu_section">أطباق الطاسة</a></li>
+          <li><a href="#menu_section">وجبات الأرز</a></li>
+        </ul>
+      </div>
+      <div class="footer_col">
+        <h4>معلومات</h4>
+        <ul>
+          <li><a href="#">عن المطعم</a></li>
+          <li><a href="#">الشيف</a></li>
+          <li><a href="#">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer_col footer_contact">
+        <h4>العنوان</h4>
+        <p>مزلقان هرية القديم أمام مسجد التوبة</p>
+        <div style="margin-top: 15px; direction:ltr; text-align:right; display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:12px; flex-wrap:wrap; align-items:center;justify-content:center">
+          <a href="tel:01212758001" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-subtext)'" style="color:var(--color-subtext); text-decoration:none; font-size:14px; transition:var(--transition); white-space:nowrap; display:flex; align-items:center; gap:5px;">
+            01212758001
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </a>
+          <span style="color:var(--color-primary); opacity:0.3;">|</span>
+          <a href="tel:01129820007" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-subtext)'" style="color:var(--color-subtext); text-decoration:none; font-size:14px; transition:var(--transition); white-space:nowrap; display:flex; align-items:center; gap:5px;">
+            01129820007
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <div class="dev_credits" style="margin-bottom: 10px; font-size: 11px; opacity: 0.7; color: var(--color-subtext); line-height: 1.6;">
+        تم التطوير بواسطة: <br>
+        <span style="white-space: nowrap;">م.عبد اللطيف محمود (<a href="tel:01098130820" style="color:inherit; text-decoration:none;">01098130820</a>)</span> 
+        <span style="white-space: nowrap;">م.محمود رضا ممدوح (<a href="tel:01001661486" style="color:inherit; text-decoration:none;">01001661486</a>)</span>
+      </div>
+      <p>حقوق الطبع والنشر © 2026 توب شيف جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <!-- Floating Cart Button -->
+  <div class="cart_fab" id="cart_fab" onclick="document.getElementById('cart_modal').style.display='flex'">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart_badge" id="cart_badge">0</span>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cart_modal">
+    <div class="modal_wrapper">
+      <button class="modal_close" onclick="document.getElementById('cart_modal').style.display='none'">✕</button>
+      
+      <div class="modal_content">
+        <div class="modal_header">
+          <h2>السلة الخاصة بك</h2>
+        </div>
+        
+        <div id="cart_step_1">
+          <div id="cart_items_container" class="cart_scroll_container">
+            <p style="text-align:center;color:var(--color-subtext)">السلة فارغة</p>
+          </div>
+
+          <div class="cart_total_row">
+            <span>الإجمالي</span>
+            <span id="cart_total_price" style="color:var(--color-primary)">0 ج.م</span>
+          </div>
+          
+          <button id="next_step_btn" onclick="goToStep2()" style="width:100%;padding:12px;background:var(--color-primary);color:#000;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;">إتمام الطلب</button>
+        </div>
+
+        <div id="cart_step_2" style="display:none;">
+          <h3 style="color:var(--color-primary); margin-bottom:15px; font-size:16px; text-align:center;">بيانات التوصيل</h3>
+          
+          <!-- User Information Form -->
+          <div id="checkout_form" class="checkout_form">
+            <div class="form_row">
+              <div class="form_group">
+                <label for="cust_name">الاسم </label>
+                <input type="text" id="cust_name" class="form_input" placeholder="الاسم..." />
+              </div>
+              
+              <div class="form_group">
+                <label for="cust_phone">رقم الهاتف</label>
+                <input type="tel" id="cust_phone" class="form_input" placeholder="01xxxxxxx" />
+              </div>
+            </div>
+
+            <div class="form_group">
+              <label for="cust_order_type">نوع الطلب</label>
+              <select id="cust_order_type" class="form_select" onchange="document.getElementById('cust_addr_container').style.display=this.value==='delivery'?'block':'none'">
+                <option value="delivery">طلب دليفري</option>
+                <option value="takeaway">تيك أواي والاستلام من الفرع</option>
+              </select>
+            </div>
+
+            <div id="cust_addr_container" class="form_group">
+              <label for="cust_addr">العنوان التفصيلي</label>
+              <input type="text" id="cust_addr" class="form_input" placeholder="المنطقة، الشارع، رقم البيت..." />
+            </div>
+
+            <div class="form_group">
+              <label for="cust_order_notes">ملاحظات الطلب</label>
+              <textarea id="cust_order_notes" class="form_input" style="min-height:60px; resize:vertical;" placeholder="أي ملاحظات إضافية على الطلب؟ ()"></textarea>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px;">
+            <button onclick="goToStep1()" style="flex:0.4;padding:12px;background:transparent;color:var(--color-subtext);border:1px solid rgba(255,255,255,0.1);border-radius:8px;font-size:14px;cursor:pointer;">رجوع</button>
+            <button id="checkout_btn" onclick="submitFinalOrder()" style="flex:1;padding:12px;background:var(--color-primary);color:#000;border:none;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;">تأكيد وإرسال</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manual Add Review Modal -->
+  <div id="review_modal" class="modal">
+    <div class="modal_wrapper">
+      <button class="modal_close" onclick="closeReviewModal()">✕</button>
+      <div class="modal_content">
+        <div class="modal_header">
+          <h2>شاركنا رأيك</h2>
+        </div>
+        <div class="checkout_form">
+          <div class="form_group">
+            <label>اسمك</label>
+            <input type="text" id="review_name" class="form_input" placeholder="اكتب اسمك هنا..." />
+          </div>
+          <div class="form_group">
+            <label>التقييم</label>
+            <div class="interactive_stars" id="review_stars">
+              <!-- Stars will be handled by JS -->
+            </div>
+          </div>
+          <div class="form_group">
+            <label>رأيك في الخدمة</label>
+            <textarea id="review_text" class="form_input" style="min-height:100px; resize:none;" placeholder="اكتب رأيك هنا..."></textarea>
+          </div>
+        </div>
+        <button class="checkout_btn" onclick="submitManualReview()">نشر التقييم</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post-Order Rating Modal -->
+  <div id="post_order_modal" class="modal">
+    <div class="modal_wrapper">
+      <div class="modal_content" style="text-align:center;">
+        <div style="font-size: 50px; margin-bottom: 10px;">🎉</div>
+        <h2 style="color:var(--color-primary); margin-bottom:10px;">شكراً لطلبك!</h2>
+        <p style="color:var(--color-subtext); margin-bottom:20px;">كيف كانت تجربتك معنا؟</p>
+        
+        <div class="interactive_stars" id="post_stars" style="justify-content:center; margin-bottom:20px;">
+          <!-- Stars -->
+        </div>
+
+        <div class="form_group" style="margin-bottom:20px;">
+          <input type="text" id="post_comment" class="form_input" placeholder="ملاحظة إضافية (اختياري)..." />
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button onclick="closePostOrderModal()" style="flex:1; padding:10px; background:transparent; color:var(--color-subtext); border:1px solid rgba(255,255,255,0.1); border-radius:8px; cursor:pointer;">تخطي</button>
+          <button onclick="submitPostOrderRating()" style="flex:2; padding:10px; background:var(--color-primary); color:#000; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">إرسال التقييم</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Warning Modal -->
+  <div id="warning_modal" class="modal">
+    <div class="modal_wrapper">
+      <div class="modal_content" style="text-align:center;">
+        <div style="font-size: 50px; margin-bottom: 10px;">⚠️</div>
+        <h2 style="color:var(--color-primary); margin-bottom:10px; font-family:Marhey, sans-serif;">تنبيه قانوني</h2>
+        <p style="color:var(--color-subtext); margin-bottom:25px; line-height:1.6; font-size:15px;">
+          تحذير: تقديم طلب عشوائي أو للتهريج يعرضك للمساءلة القانونية. إدارة توب شيف
+        </p>
+        
+        <div style="display:flex; gap:12px;">
+          <button onclick="closeWarningModal()" style="flex:1; padding:12px; background:transparent; color:var(--color-subtext); border:1px solid rgba(255,255,255,0.1); border-radius:10px; cursor:pointer; font-family:inherit;">إلغاء</button>
+          <button id="confirm_warning_btn" style="flex:2; padding:12px; background:var(--color-primary); color:#000; border:none; border-radius:10px; font-weight:bold; cursor:pointer; font-family:inherit; font-size:16px;">تأكيد وقبول</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
